@@ -3,7 +3,7 @@ import Editor from "@monaco-editor/react";
 import LanguageSelector from "./LanguageSelector";
 import { CODE_SNIPPETS } from "../constants";
 import ACTIONS from "../Actions";
-import { editor } from "monaco-editor";
+import Output from "./Output";
 
 const MonacoEditor = ({ socketRef, roomId, onCodeChange }) => {
   const editorRef = useRef();
@@ -76,25 +76,70 @@ const MonacoEditor = ({ socketRef, roomId, onCodeChange }) => {
   });
 
   return (
-    <div id="editor">
-      <Editor
-        height="90vh"
-        language={language}
-        defaultValue="// Some comment"
-        theme="vs-dark"
-        value={value}
-        onChange={handleEditorChange}
-        onMount={onMount}
-      />
-      <LanguageSelector
-        className="languageSelectorDiv"
-        language={language}
-        onSelect={onSelect}
-        socketRef={socketRef}
-        roomId={roomId}
-      />
+    <div className="mainEditorWrap">
+      <div id="editor">
+        <Editor
+          height="89.5vh"
+          width="45vw"
+          language={language}
+          defaultValue="// Some comment"
+          theme="vs-dark"
+          value={value}
+          onChange={handleEditorChange}
+          onMount={onMount}
+        />
+        <LanguageSelector
+          className="languageSelectorDiv"
+          language={language}
+          onSelect={onSelect}
+          socketRef={socketRef}
+          roomId={roomId}
+        />
+      </div>
+      <Output editorRef={editorRef} language={language} />
+      {/* <div className="run_div">
+        <div className="runner_div">
+          <div className="innerText">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab,
+            doloremque qui, accusamus obcaecati optio dolores consectetur facere
+            omnis vitae ipsum magni corrupti quidem? Distinctio a totam animi
+            eligendi enim delectus deleniti porro! Unde distinctio, qui a
+            obcaecati consequuntur iste totam similique. Harum iusto, maiores,
+            ipsum molestiae dolorum debitis iste nihil et sunt deserunt
+            consequatur illum deleniti placeat pariatur doloremque. Voluptatibus
+            deleniti aspernatur quos nam veritatis iste consectetur repellendus
+            dolore amet, sapiente eos maxime ducimus recusandae dolor nisi,
+            minus iusto at quo mollitia? Rerum dicta consequatur, magnam fugit
+            temporibus amet deserunt consequuntur sed, quam doloremque eum omnis
+            nobis quia, quod vitae!
+          </div>
+        </div>
+        <button className="btn runCodeBtn">Run Code</button>
+      </div> */}
     </div>
   );
 };
+
+//   return (
+//     <div id="editor">
+//       <Editor
+//         height="90vh"
+//         language={language}
+//         defaultValue="// Some comment"
+//         theme="vs-dark"
+//         value={value}
+//         onChange={handleEditorChange}
+//         onMount={onMount}
+//       />
+//       <LanguageSelector
+//         className="languageSelectorDiv"
+//         language={language}
+//         onSelect={onSelect}
+//         socketRef={socketRef}
+//         roomId={roomId}
+//       />
+//     </div>
+//   );
+// };
 
 export default MonacoEditor;

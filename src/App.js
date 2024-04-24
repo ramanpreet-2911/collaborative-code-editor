@@ -3,7 +3,6 @@ import "./App.css";
 import Home from "./pages/Home";
 import EditorPage from "./pages/EditorPage";
 import { Toaster } from "react-hot-toast";
-import { ChakraProvider } from "@chakra-ui/react";
 
 function App() {
   return (

@@ -17,10 +17,8 @@ export const CODE_SNIPPETS = {
       // TypeScript
       console.log("Hello, welcome to TypeScript!");
     `,
-  python: `
-      # Python
-      print("Hello, welcome to Python!")
-    `,
+  python: `# Python
+print("Hello, welcome to Python!")`,
   java: `
       // Java
       public class Main {

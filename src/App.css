@@ -93,7 +93,7 @@ footer a:hover {
 .mainWrap {
   display: grid;
   grid-template-columns: 230px 1fr;
-  height: 100vh;
+  height: 95vh;
 }
 
 .aside {
@@ -158,7 +158,9 @@ footer a:hover {
   /* margin-left: auto; */
 }
 
-.copyBtn:hover {
+.copyBtn:hover,
+.runCodeBtn:hover,
+.selectMenuBtn:hover {
   background: #424242;
   color: #fff;
 }
@@ -186,11 +188,38 @@ footer a:hover {
   padding-bottom: 10px;
 }
 
+.editorWrap {
+  height: 90vh;
+}
+
+.mainEditorWrap {
+  /* width: 100vw; */
+  display: flex;
+  /* justify-content: space-between; */
+  /* height: 100vh; */
+}
+
 .editor {
   position: relative;
   display: flex;
-  width: 100vw;
-  /* height: 100vh; */
+}
+
+.runCodeBtn {
+  margin-top: 30px;
+}
+
+.runner_div {
+  height: 89vh;
+  width: 40vw;
+  /* margin: 0px 5px; */
+  border: 2px solid #093519;
+  background-color: #282a36;
+}
+
+.innerText {
+  padding: 20px;
+  color: #4aee88;
+  white-space: pre-wrap;
 }
 
 .languageSelectorDiv {
